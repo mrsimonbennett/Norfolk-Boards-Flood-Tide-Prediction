@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \Tide\Application\Console\Commands\Inspire::class,
+        \Tide\Application\Console\Commands\ScrapImage::class,
     ];
 
     /**
