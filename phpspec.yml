@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: Tide\Application
+        psr4_prefix: Tide\Application
         src_path: app

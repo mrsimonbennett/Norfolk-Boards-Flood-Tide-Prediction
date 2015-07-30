@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Tide\Application\Events;
 
 abstract class Event
 {
