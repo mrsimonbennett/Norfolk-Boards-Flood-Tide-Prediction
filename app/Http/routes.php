@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+/** @var \Illuminate\Routing\Router $router */
+
+$router->get('/', function () {
+    return view('welcome', ['tides' => \Tide\Application\Tide::orderby('time')->get()]);
 });
+
+
+

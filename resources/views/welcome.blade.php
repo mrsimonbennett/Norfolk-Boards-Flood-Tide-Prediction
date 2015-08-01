@@ -38,8 +38,34 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Tides</div>
+                <canvas id="myChart" width="1000" height="400"></canvas>
+
             </div>
         </div>
+        <script src="Chart.js"></script>
+
+        <script>
+        var data = {
+            labels: [@foreach($tides as $tide) "{{(new \Carbon\Carbon($tide->time))->format("h:m")}}", @endforeach],
+            datasets: [
+                {
+                    label: "Chart",
+                    strokeColor: "rgba(255, 0, 0, 0.9)",
+                    data: [@foreach($tides as $tide) "{{$tide->height}}", @endforeach]
+                },
+
+            ]
+        };
+        var ctx = document.getElementById("myChart").getContext("2d");
+
+        var myLineChart = new Chart(ctx).Line(data, {
+            datasetFill : false,
+            scaleLabel : "<%= parseFloat(value).toFixed(2) + 'm' %>"
+
+
+        });
+
+    </script>
     </body>
 </html>
